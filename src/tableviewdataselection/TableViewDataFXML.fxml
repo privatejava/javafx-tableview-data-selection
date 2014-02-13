@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="tableviewdataselection.TableViewDataDemoController">
+  <children>
+    <TableView fx:id="tableView" prefHeight="342.0" prefWidth="407.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="44.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Sn." fx:id="snCol" />
+        <TableColumn prefWidth="75.0" text="Name" fx:id="nameCol" />
+        <TableColumn prefWidth="75.0" text="Address" fx:id="addressCol" />
+        <TableColumn prefWidth="75.0" text="Gender" fx:id="genderCol" />
+        <TableColumn prefWidth="75.0" text="Phone" fx:id="phoneCol" />
+      </columns>
+    </TableView>
+    <ListView fx:id="listView" prefHeight="342.0" prefWidth="153.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="44.0" />
+    <Label text="Selected Indexes" AnchorPane.rightAnchor="72.0" AnchorPane.topAnchor="22.0">
+      <font>
+        <Font name="System Bold" size="12.0" />
+      </font>
+    </Label>
+    <RadioButton id="rowSelect" fx:id="rowRadio" layoutX="21.0" layoutY="16.0" mnemonicParsing="false" selected="true" text="Row Selection">
+      <toggleGroup>
+        <ToggleGroup fx:id="selectionGrp" />
+      </toggleGroup>
+    </RadioButton>
+    <RadioButton id="cellSelect" fx:id="cellRadio" layoutX="133.0" layoutY="16.0" mnemonicParsing="false" text="Cell Selection" toggleGroup="$selectionGrp" />
+    <ComboBox fx:id="colSelect" layoutX="236.0" layoutY="14.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Item 1" />
+          <String fx:value="Item 2" />
+          <String fx:value="Item 3" />
+        </FXCollections>
+      </items>
+    </ComboBox>
+  </children>
+</AnchorPane>
