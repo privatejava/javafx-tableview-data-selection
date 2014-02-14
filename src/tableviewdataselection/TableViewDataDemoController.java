@@ -272,9 +272,11 @@ public class TableViewDataDemoController {
      */
     private void setSelection(IndexedCell cell) {
         if (rowRadio.isSelected()) {
-            if (cell.isSelected() && cell.isFocused()) {
+            if (cell.isSelected()) {
+                System.out.println("False");
                 tableView.getSelectionModel().clearSelection(cell.getIndex());
             } else {
+                System.out.println("true");
                 tableView.getSelectionModel().select(cell.getIndex());
             }
         }
@@ -289,7 +291,7 @@ public class TableViewDataDemoController {
      */
     private void setSelection(IndexedCell cell, TableColumn col) {
         if (cellRadio.isSelected()) {
-            if (cell.isSelected() && cell.isFocused()) {
+            if (cell.isSelected()) {
                 System.out.println("False enter");
                 tableView.getSelectionModel().clearSelection(cell.getIndex(), col);
             } else {
