@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.*;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
@@ -80,7 +81,7 @@ public class TableViewDataDemoController {
         // changed to multiple selection mode
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         // set cell value factories
-//        setCellValueFactories();
+        setCellValueFactories();
 
         //set Dummy Data for the TableView
         tableView.setItems(getData());
@@ -158,6 +159,14 @@ public class TableViewDataDemoController {
 
         //Set row selection as default
         setRowSelection();
+    }
+
+    private void setCellValueFactories() {
+        snCol.setCellValueFactory(new PropertyValueFactory("sn"));
+        nameCol.setCellValueFactory(new PropertyValueFactory("name"));
+        genderCol.setCellValueFactory(new PropertyValueFactory("gender"));
+        phoneCol.setCellValueFactory(new PropertyValueFactory("phone"));
+        addressCol.setCellValueFactory(new PropertyValueFactory("address"));
     }
 
     /**
