@@ -33,7 +33,7 @@ public class TableViewDataSelection extends Application {
         }
 
 
-        Scene scene = new Scene(p, 300, 250);
+        Scene scene = new Scene(p);
 
         primaryStage.setTitle("TableView Data Selection Demo !");
         primaryStage.setScene(scene);
